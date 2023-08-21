@@ -1,5 +1,5 @@
 // Array extraño
-const strangeArray = [
+const STRANGE_ARRAY = [
   "Zero",
   function () {
     alert("Hola soy una función en un array");
@@ -36,7 +36,15 @@ function showList(array) {
   });
 }
 
+const MOSTRAR_STRINGS = (array) => {
+  return array.filter((elemento) => typeof elemento === "string");
+};
+
+const ORDENAR_ALFABETICAMENTE = array => array.sort((a, b) => {
+  return a.localeCompare(b);
+});
+
 document.addEventListener("DOMContentLoaded", (e) => {
-  // Escribe tu solución aquí
-  // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  let stringElemEnOrden = ORDENAR_ALFABETICAMENTE(MOSTRAR_STRINGS(STRANGE_ARRAY));
+  showList(stringElemEnOrden);
 });
